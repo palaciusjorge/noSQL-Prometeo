@@ -20,10 +20,7 @@ const winnerDocuments = winners.map(winner => new Winner(winner));
 
 
 mongoose
-.connect('mongodb://localhost:27017/proyecto-tour-france', {
-useNewUrlParser: true,
-useUnifiedTopology: true,
-})
+.connect('mongodb://localhost:27017/proyecto-tour-france')
 .then(async () => {
 const allWinners = await Winner.find();
 if (allWinners.length) {
